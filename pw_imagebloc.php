@@ -106,11 +106,8 @@ class Pw_ImageBloc extends Module implements WidgetInterface
             
             foreach ($languages as $language) {
                 $slide->title[$language['id_lang']] = 'Sample ' . $i;
-                $slide->url[$language['id_lang']] = 'https://www.prestashop-project.org?utm_source=back-office&utm_medium=v17_pwimagebloc'
-                    . '&utm_campaign=back-office-' . Tools::strtoupper($this->context->language->iso_code)
-                    . '&utm_content=' . (defined('_PS_HOST_MODE_') ? 'ondemand' : 'download');
-                $rtlSuffix = $language['is_rtl'] ? '_rtl' : '';
-                $slide->image[$language['id_lang']] = sprintf('sample-%d%s.jpg', $i, $rtlSuffix);
+                $slide->url[$language['id_lang']] = 'https://www.prestashop-project.org';
+                $slide->image[$language['id_lang']] = sprintf('sample-%d.jpg', $i);
             }
             $slide->add();
         }
