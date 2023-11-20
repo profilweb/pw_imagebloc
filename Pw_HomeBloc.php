@@ -91,7 +91,7 @@ class Pw_HomeBloc extends ObjectModel
 
         $max = Db::getInstance((bool) _PS_USE_SQL_SLAVE_)->executeS('
 			SELECT MAX(hss.`position`) as position
-			FROM `' . _DB_PREFIX_ . 'pwimagebloc_slides` hss, `pwimagebloc` hs
+			FROM `' . _DB_PREFIX_ . 'pwimagebloc_slides` hss, `' . _DB_PREFIX_ . 'pwimagebloc` hs
 			WHERE hss.`id_pwimagebloc_slides` = hs.`id_pwimagebloc_slides` AND hs.`id_shop` = ' . (int) $id_shop
         );
 
